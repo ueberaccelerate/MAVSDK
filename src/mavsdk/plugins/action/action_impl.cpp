@@ -267,7 +267,8 @@ bool ActionImpl::need_hold_before_arm() const
 bool ActionImpl::need_hold_before_arm_px4() const
 {
     if (_system_impl->get_flight_mode() == FlightMode::Mission ||
-        _system_impl->get_flight_mode() == FlightMode::ReturnToLaunch) {
+        _system_impl->get_flight_mode() == FlightMode::ReturnToLaunch ||
+        _system_impl->get_flight_mode() == FlightMode::Posctl) {
         return true;
     } else {
         return false;
